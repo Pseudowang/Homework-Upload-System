@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>数据备份作业提交</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='js/policyupload.js') }}"></script>
+</head>
+<body>
+    <button class="home-button" onclick="window.location.href='/'">返回首页</button>
+    <div class="background"></div> <!-- 背景层 -->
+    <div class="container">
+        <h1 class="text-center">形式与政策作业提交</h1>
+        <h4 class="text-center">请上传长学号+姓名的zip文件</h2>
+        <form id="uploadForm">
+            <div class="mb-3">
+                <input type="file" id="fileInput" class="form-control">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="handleUpload()">上传</button>
+            <div class="progress mt-3">
+                <div id="uploadProgress" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+            <div id="uploadStatus" class="alert alert-success mt-3">上传成功!</div>
+            <div id="uploadError" class="alert alert-danger mt-3">上传失败.</div>
+        </form>
+    </div>
+</body>
+</html>

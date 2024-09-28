@@ -1,0 +1,133 @@
+/* 设置全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* 禁止滚动 */
+}
+
+/* 背景层 */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://wangzhrbuckets.s3.bitiful.net/picture/2024/09/76250907f94d895b65f6b0270260394a.jpg'); /* 替换为实际壁纸的 URL */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* 背景位于内容后面 */
+}
+
+/* 容器样式 */
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 100px auto; /* 向下移动容器 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* 使容器背景略微透明 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+}
+
+h4 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: red;
+    text-align: center;
+}
+
+/* 文件选择按钮样式 */
+input[type="file"] {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* 按钮样式 */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+.home-button {
+    position: fixed; /* 固定位置 */
+    top: 10px; /* 距离顶部 10 像素 */
+    left: 10px; /* 距离左侧 10 像素 */
+    background-color: #007bff; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    border: none; /* 无边框 */
+    padding: 10px 20px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    text-decoration: none; /* 无下划线 */
+    display: inline-block; /* 内联块 */
+    font-size: 16px; /* 字体大小 */
+    cursor: pointer; /* 鼠标指针 */
+    border-radius: 4px; /* 圆角 */
+    width: auto; /* 自动宽度 */
+}
+
+.home-button:hover {
+    background-color: #0056b3; /* 悬停时的背景颜色 */
+}
+
+/* 进度条样式 */
+.progress {
+    height: 25px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    line-height: 25px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+
+/* 提示信息样式 */
+.alert {
+    display: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
