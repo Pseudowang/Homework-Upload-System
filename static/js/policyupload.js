@@ -46,7 +46,40 @@ function uploadFile(file) {
     axios.get(url, { params: params })
         .then(function (res) {
             const uploadUrl = res.data.url;
-            // 继续处理上传逻辑...
+
+            // 使用获取到的上传 URL 进行文件上传
+            const formData = new FormData();
+            formData.append('file', file);
+
+            axios.put(uploadUrl, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                onUploadProgress: function(progressEvent) {
+                    const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                    const progressBar = document.getElementById('uploadProgress');
+                    progressBar.style.width = percentCompleted + '%';
+                    progressBar.innerText = percentCompleted + '%';
+                }
+            })
+            .then(function(response) {
+                const progressBar = document.getElementById('uploadProgress');
+                progressBar.classList.remove('bg-info');
+                progressBar.classList.add('bg-success');
+                const uploadStatus = document.getElementById('uploadStatus');
+                uploadStatus.style.display = 'block';
+                const uploadError = document.getElementById('uploadError');
+                uploadError.style.display = 'none';
+            })
+            .catch(function(error) {
+                const progressBar = document.getElementById('uploadProgress');
+                progressBar.classList.remove('bg-info');
+                progressBar.classList.add('bg-danger');
+                const uploadStatus = document.getElementById('uploadStatus');
+                uploadStatus.style.display = 'none';
+                const uploadError = document.getElementById('uploadError');
+                uploadError.style.display = 'block';
+            });
         })
         .catch(function (error) {
             console.error('Error fetching upload URL:', error);
