@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyles.css') }}">
 </head>
 <body>
-    <h1>选择要上传的作业科目</h1>
-    <button onclick="window.location.href='/policyweb'">上传政策文件</button>
-    <button onclick="window.location.href='/dataweb'">上传数据文件</button>
+    <div>
+        <h1>选择要上传的作业科目</h1>
+        <button class = "custom-button"  onclick="window.location.href='/policyweb'">上传形式与政策作业</button>
+        <button class = "custom-button" onclick="window.location.href='/dataweb'">上传数据备份作业</button>
+    </div>
     
 </body>
 </html>
